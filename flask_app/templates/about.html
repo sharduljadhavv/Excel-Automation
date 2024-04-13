@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block navbar %}
+<nav class="p-2 mb-2 space-y-2 text-sm text-center text-white rounded-b-3xl drop-shadow-lg dark:border-b dark:border-gray-700 dark:bg-gray-900">
+    <div class="flex justify-center items-center gap-2 font-bold font-mono text-2xl">
+        About Page
+    </div>
+    <ul class="py-2">
+        <li>
+            <a class="border border-gray-700 p-2 my-2 rounded focus:border-white" href="{{ url_for('files') }}">File upload section</a>
+        </li>
+    </ul>
+</nav>  
+{% endblock navbar %}
+
+{% block content %}
+<div class="container mx-auto text-white text-2xl py-4 px">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium labore quasi, earum adipisci minus nobis aspernatur molestias beatae numquam vitae blanditiis eum recusandae ipsa consequatur sunt! Dignissimos ea officia adipisci?
+</div>
+{% endblock content %}

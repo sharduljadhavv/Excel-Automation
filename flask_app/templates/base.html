@@ -1,0 +1,56 @@
+<!------------------------------------------------NOT IN USE----------------------------------------------------->
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{{ title }}</title>
+        <!-- Bootstrap CDN -->
+        <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css">
+        <!-- Google Fonts -->
+        <link rel="stylesheet" href="../static/fonts/poppins">
+        <!-- External Iconc CDN link -->
+        <link rel="stylesheet" type="text/css" href="../static/css/datatable.css">
+        <!-- External CSS -->
+        <link rel="stylesheet" href="../static/css/style.css">
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.full.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <!-- navbar -->
+        {% block navbar %} {% endblock navbar %}
+        <!-- navbar -->
+
+        <main>
+            <!-- upload block -->
+            {% block file_upload %} {% endblock file_upload %}
+            <!-- upload block -->
+
+            <!-- files block-->
+            {% block processed_files %} {% endblock processed_files %}
+            <!-- files block -->
+        </main>
+
+        <!-- Bootstrap JS-->
+        <script src="../static/bootstrap/js/bootstrap.bundle.js"></script>
+        <script src="../static/js/jquery.js"></script>
+        <script type="text/javascript" charset="utf8" src="../static/js/datatable.js"></script>
+        <script src="../static/js/datatables_button.js"></script>
+        <script src="..static/js/cloudfare.js"></script>
+        <script src="..static/js/datatables_buttons_html5.js"></script>
+        <script src="..static/js/cloudflare_momnet_min.js"></script>
+        <script src="..static/js/file_proceed.js"></script>
+        <script src="../static/js/file.js"></script>
+        <script src="../static/js/popup.js"></script>
+        <script src="../static/js/script.js"></script>
+        <script src="../static/js/clear.js"></script>
+
+        <script>
+            setTimeout(function() {
+                bootstrap.Alert.getOrCreateInstance(document.querySelector(".alert")).close();
+            }, 3000)
+        </script>
+    </body>
+</html>

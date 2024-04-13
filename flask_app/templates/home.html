@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{{ title }}</title>
+        <!-- Bootstrap CDN -->
+        <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css">
+        <!-- Google Fonts -->
+        <link rel="stylesheet" href="../static/fonts/poppins">
+        <!-- External Iconc CDN link -->
+        <link rel="stylesheet" type="text/css" href="../static/css/datatable.css">
+        <!-- External CSS -->
+        <link rel="stylesheet" href="../static/css/style.css">
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.full.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <!-- flash message -->
+        {% include "flash_message/message.html" %}
+        <!-- flash message --> 
+
+        <!-- Navbar -->
+        <nav class="d-flex align-items-center justify-content-between">
+            <div class="mb-2"><img src="../static/image/Imperative_Logo.png" alt="Imperative logo" class="company-logo"></div>
+            <div class="menu-tab">
+                <h5 class="fw-semibold">HDFC 4310</h5>
+            </div>
+            <div class="d-flex justify-content-between align-items-center user-div">
+                <div class="d-flex align-items-center me-3">
+                    <a href="" class="me-2"><img src="../static/image/user.svg" alt=""></a>
+                    <span class="fs-6">{{ current_user.id }} {{ current_user.username }}</span>
+                </div>
+                <div>
+                    <a href="{{ url_for('logout') }}"><img src="../static/image/logout.svg" alt=""></a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main>
+            <div class="custom-container">
+                <div class="container-fluid">
+                    <form method="post" action="{{ url_for('get_data') }}" enctype="multipart/form-data" class="d-flex align-items-center">
+
+                        <div class="col ">
+                            <div class="form-group">
+                                <h5>BRS Output</h5>
+                            </div>
+                            <input type="file" id="fileInput" name="reconed-file" class="fullwidth inputt"
+                                accept=".csv, application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
+                            <label for="fileInput" class="custom-file-upload">Select File</label>
+                        </div>
+
+                        <div class="col ">
+                            <div class="form-group">
+                                <h5>Bank File</h5>
+                            </div>
+                            <input type="file" id="fileInput1" name="bank-file" class="fullwidth inputt"
+                                accept=".csv, application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
+                            <label for="fileInput1" class="custom-file-upload">Select File</label>
+                        </div>
+
+                        <div class="col ">
+                            <div class="form-group">
+                                <h5>Merchant Report</h5>
+                            </div>
+                            <input type="file" id="fileInput2" name="merchant-file" class="fullwidth inputt"
+                                accept=".csv, application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
+                            <label for="fileInput2" class="custom-file-upload">Select File</label>
+                        </div>
+
+                        <div class="col">
+                            <div class="form-group">
+                                <h5>Ledger Report</h5>
+                            </div>
+                            <input type="file" id="fileInput3" name="ledger-file" class="inputt"
+                                accept=".csv, application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
+                            <label for="fileInput3" class="custom-file-upload">Select File</label>
+
+                        </div>
+
+                        <div class="col">
+                            <div class="form-group">
+                                <h5>LMS Report</h5>
+                            </div>
+                            <input type="file" id="fileInput4" name="pennant-file" class="fullwidth inputt"
+                                accept=".csv, application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
+                            <label for="fileInput4" class="custom-file-upload">Select File</label>
+
+                        </div>
+
+
+                        <div class="col mt-5">
+                            <div class="form-group">
+                                <h5>Select Date</h5>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input type="date" id="dateInput" name="recon_date" class="form-control calender-selected-date">
+                                </div>
+                            </div>
+                            <br><br>
+                        </div>
+
+
+                        <div class="col ms-5 mt-4">
+                            <button type="submit" class="btn btn-purple"
+                                >Proceed</button>
+                        </div>
+
+                    </form>
+                </div>
+
+                <!-- Step progress -->
+                <div class="container-fluid">
+                    <div class="step-progress">
+                        <div class="step" id="step1">
+                            <div class="step-circle">1<span class="step-icon"></span></div>
+                            <div class="step-line"></div>
+                        </div>
+                        <div class="step" id="step2">
+                            <div class="step-circle">2</div>
+                            <div class="step-line"></div>
+                        </div>
+                        <div class="step" id="step3">
+                            <div class="step-circle">3</div>
+                            <div class="step-line"></div>
+                        </div>
+                        <div class="step" id="step4">
+                            <div class="step-circle">4</div>
+                            <div class="step-line"></div>
+                        </div>
+                        <div class="step" id="step5">
+                            <div class="step-circle">5</div>
+                            <div class="step-line"></div>
+                        </div>
+
+                        <div class="step" id="step6">
+                            <div class="step-circle">6</div>
+                            <div class="step-line"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Table -->
+            <div class="custom-container ">
+                <h4>History</h4>
+                <div class="container mb-3">
+                    <div class="rectangle">
+                        <img src="../static/image/calender.svg" class="show-modal" id="viewDetailsBtn">
+                    </div>
+                    <div id="popupTable" class="popup">
+                        <span class="close" onclick="closePopup()">&times;</span>
+                        <div class="container1">
+                            <input type="date" name="" max="" id="fromDate" class="input1">
+                            <br>
+                            <input type="date" name="" min="" id="toDate" class="input1">
+                            <br><br>
+                            <center><button class="buttons rounded" onclick="closePopup()">Okk</button></center>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="backdrop"></div>
+                <table id="datatable" class="display table table-responsive table-striped table-hover mt-1">
+                    <thead class="text-md-center">
+                        <tr>
+                            <th class="col-2">Sr. No.</th>
+                            <th class="col-6">File Name</th>
+                            <th class="col-2">Date</th>
+                            <th class="col-2">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-md-center">
+                        {% for file in files %}
+                            <tr>
+                                <form method="post" action="{{ url_for('delete_processed_files', id=file.id) }}">
+                                    <td class="col-2">{{ loop.index }}</td>
+                                    <td class="col-6">{{ file.description }}</td>
+                                    <td class="col-2">{{ file.created_at|datetimeformat }}</td>
+                                    <td class="col-2">
+                                        <button type="submit" class="btn btn-red rounded-pill text-white">Delete</button>
+                                        <a href="{{ url_for('download_file', filepath=file.url) }}" class="btn btn-primary rounded-pill">Download</a>
+                                    </td>
+                                </form>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </main>
+
+        <!-- Bootstrap JS-->
+        <script src="../static/bootstrap/js/bootstrap.bundle.js"></script>
+        <script src="../static/js/jquery.js"></script>
+        <script type="text/javascript" charset="utf8" src="../static/js/datatable.js"></script>
+        <script src="../static/js/datatables_button.js"></script>
+        <script src="../static/js/cloudfare.js"></script>
+        <script src="../static/js/datatables_buttons_html5.js"></script>
+        <script src="../static/js/cloudflare_momnet_min.js"></script>
+        <script src="../static/js/file_proceed.js"></script>
+        <script src="../static/js/file.js"></script>
+        <script src="../static/js/popup.js"></script>
+        <script src="../static/js/script.js"></script>
+        <script src="../static/js/clear.js"></script>
+        <script>
+            setTimeout(function() {
+                bootstrap.Alert.getOrCreateInstance(document.querySelector(".alert")).close();
+            }, 1000)
+        </script>
+        <script>
+            function disableButton() {
+                // Disable the button after click
+                document.getElementById("proceedButton").disabled = true;
+                // Change button color to secondary
+                document.getElementById("proceedButton").classList.remove("btn-purple");
+                document.getElementById("proceedButton").classList.add("btn-secondary");
+            }
+        </script>
+    </body>
+</html>

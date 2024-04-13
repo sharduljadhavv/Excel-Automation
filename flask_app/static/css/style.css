@@ -1,0 +1,351 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #f6f6f6;
+  font-family: "Poppins", sans-serif;
+  padding-top: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.company-logo {
+  height: 3.85rem;
+  width: auto;
+}
+.user-div {
+  background-color: #fff;
+  padding: 0.625rem;
+  border-radius: 0.688rem;
+  box-shadow: 0px 2px 4px 1px #00000026;
+}
+.btn-purple,
+.btn-purple-2 {
+  color: #ffffff;
+  box-shadow: 0px 2px 4px 1px #00000026;
+  font-size: 1rem;
+  font-weight: 600;
+  width: 10rem;
+  height: 3rem;
+  border: none;
+  border-radius: 1.313rem;
+}
+
+.btn-purple-2 {
+  width: 8.4rem;
+  height: 2rem;
+  font-size: 12px;
+}
+.btn-purple,
+.btn-purple-2 {
+  background-color: #81689d;
+}
+
+.btn-purple:hover,
+.btn-purple-2:hover {
+  background-color: #6a5780;
+}
+.btn-red {
+  background-color: #ee5b5b !important;
+  margin-right: 18px !important;
+}
+.btn-red:hover {
+  background-color: #eb4545 !important;
+}
+
+.text-danger {
+  color: #ee5b5b !important;
+}
+
+.custom-container {
+  border-radius: 0.5rem;
+  padding: 0.8rem;
+  margin-top: 1rem;
+  background-color: #ffffff;
+  box-shadow: 0px 2px 4px 1px #00000026;
+}
+
+.custom-form-control {
+  width: 8.5rem;
+  padding: 10px 0;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  border: 1px solid #d9d9d9;
+  background-color: #d9d9d9;
+  color: #4a4a4a;
+  border-radius: 8px !important;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.file-label {
+  cursor: pointer;
+}
+
+.menu-tab {
+  margin-left: 12rem;
+  background: #fff;
+  box-shadow: 0px 2px 4px 1px #00000026;
+  border-radius: 40px;
+  color: #353130;
+}
+
+.fw-semibold {
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: center;
+  padding-top: 5px;
+}
+.modal .modal-body {
+  border: 1px solid #81689d !important;
+  border-radius: 7px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #81689d;
+  margin: 25px 50px 0px 50px;
+}
+
+.close {
+  font-size: 35px;
+  margin-right: 20px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.step-progress {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  margin-right: 270px;
+  margin-left: 50px;
+}
+
+.step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
+}
+.step::after {
+  position: absolute;
+  content: "";
+  border-bottom: 2px solid #ccc;
+  width: 100%;
+  top: 16px;
+  left: 50%;
+  z-index: 2;
+}
+.step-circle {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #ccc;
+  color: #7b7b7b;
+}
+.step-circle.step-line .completed {
+  background-color: #81689d;
+}
+.step:first-child::before {
+  content: none;
+}
+.step:last-child::after {
+  content: none;
+}
+
+.step-circle img {
+  width: 15px;
+  height: 15px;
+}
+
+/*pop up box buttons*/
+.buttons {
+  height: 40px;
+  width: 100px;
+  background-color: #81689d;
+  color: #fff;
+  font-size: 17px;
+  text-align: center;
+  padding: 5px;
+  border: none;
+}
+/*download button*/
+.dt-buttons .no-border {
+  margin-bottom: 20px; /* Adjust the margin value as needed */
+  text-align: center;
+  padding-left: 20px;
+}
+
+/*upload Button*/
+
+.inputt[type="file"] {
+  display: none;
+}
+
+.calender-selected-date {
+  border: 1px solid #d9d9d9;
+  background-color: rgb(196, 196, 196);
+  color: #000000;
+  border-radius: 8px !important;
+  cursor: pointer;
+  width: 165px;
+  height: 59px;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.custom-file-upload {
+  background-color: rgb(196, 196, 196);
+  width: 165px;
+  height: 59px;
+  border-radius: 50px;
+  cursor: pointer;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0em;
+  padding-top: 20px;
+}
+
+.form-group {
+  width: 171px;
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 27px;
+  text-align: center;
+  color: #81689d;
+}
+
+/*calender*/
+
+.input1 {
+  width: 80%;
+  padding: 10px 15px;
+  font-size: 18px;
+  font-family: arial;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  width: 400px;
+  height: 280px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  padding: 20px;
+  background-color: #fff; /* Background color of the popup */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Box shadow for the popup */
+}
+#backdrop {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  z-index: 9; /* Ensure backdrop is behind popup */
+  backdrop-filter: blur(5px); /* Blur effect */
+}
+.show-modal {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  margin-top: 10px;
+  margin-left: 150px;
+}
+
+/* Media queries for responsive adjustments */
+@media (max-width: 991.98px) {
+  /* Adjust margin-left for md and sm screen sizes */
+  .show-modal {
+    margin-left: -50px; /* Adjust margin for md and sm screen sizes */
+  }
+}
+
+@media (max-width: 767.98px) {
+  .show-modal {
+    margin-left: -20px;
+  }
+}
+
+.button1 {
+  border: none;
+}
+
+h4 {
+  color: #81689d;
+}
+
+/* For screens smaller than 768px */
+@media (max-width: 767.98px) {
+  .menu-tab {
+    margin-left: 0;
+    padding: 18px 20px;
+  }
+}
+
+/* For screens between 768px and 991.98px */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .menu-tab {
+    padding: 18px 50px; /* Adjust padding */
+  }
+}
+
+/* For screens larger than 992px */
+@media (min-width: 992px) {
+  .menu-tab {
+    padding: 6px 100px; /* Reset padding */
+  }
+}
+
+/*-------------------*/
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .custom-container {
+    padding: 1rem;
+  }
+
+  .custom-form-control {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Responsive styles */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .show-modal {
+    position: relative;
+  }
+
+}
+@media screen and (max-width: 575px) {
+  .show-modal {
+    margin: 300px;
+    position: fixed;
+  }
+}
+
+
+
